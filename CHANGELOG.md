@@ -1,3 +1,10 @@
+# v1.5.0
+## 01/04/2024
+
+1. []()
+    * Addes SEO tab so you can set/overide auto generated values
+
+
 # v1.4.0
 ## 04/08/2022
 

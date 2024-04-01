@@ -2,6 +2,8 @@
 namespace Grav\Plugin;
 
 use Grav\Common\Plugin;
+use RocketTheme\Toolbox\Event\Event ;
+use Grav\Common\Data;
 
 /**
  * Class AutoSeoPlugin
@@ -16,7 +18,9 @@ class AutoSeoPlugin extends Plugin
     public static function getSubscribedEvents() {
         return [
             'onPluginsInitialized' => ['onPluginsInitialized', 0],
+            'onBlueprintCreated' => ['onBlueprintCreated', 0]
         ];
+
     }
     /**
      * Register events with Grav
@@ -33,6 +37,24 @@ class AutoSeoPlugin extends Plugin
             ]);
         }
     }
+
+    public function onBlueprintCreated(Event $event)
+    {
+        static $inEvent = false;
+
+        /** @var Data\Blueprint $blueprint */
+        $blueprint = $event['blueprint'];
+        if (!$inEvent && $blueprint->get('form/fields/tabs', null, '/')) {
+            if (!in_array($blueprint->getFilename(), array_keys($this->grav['pages']->modularTypes()))) {
+                $inEvent = true;
+                $blueprints = new Data\Blueprints(__DIR__ . '/blueprints/');
+                $extends = $blueprints->get('autoseo');
+                $blueprint->extend($extends, true);
+                $inEvent = false;
+            }
+        }
+    }
+
 
     /**
      * Add content after page content was read into the system.
@@ -142,6 +164,7 @@ class AutoSeoPlugin extends Plugin
             $meta['og:image']['property']  = 'og:image';
             $meta['og:image']['content']   = $this->grav['uri']->base() . $image->url();
         }
+
         return $meta;
     }
 
