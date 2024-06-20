@@ -6,6 +6,13 @@ en:
       PLUGIN_STATUS: Plugin status
       DEFAULT_CONFIG: Default values for the plugin configuration
       PLUGIN_DEPENDENCY_FAILED: Auto SEO Plugin failed to load. Composer dependencies not met.
+      TITLE:
+        APPEND_SITE_TITLE:
+          LABEL: Append the site title to the "title" meta 
+          HELP: Concatenates the site title to the "title" metadata, e.g., from 'About Us' to 'About Us | My Awesome Site'.
+        SEPARATOR:
+          LABEL: Separator text for "title" meta
+          HELP: Text that separates the page title from the site title in the "title" metadata, e.g., 'About Us | My Awesome Site' or 'About Us - My Awesome Site'.
       DESCRIPTION:
         ENABLED_LABEL: Auto fill for "description" meta
         ENABLED_HELP: Lets you turn the plugin ON and OFF for the "description" metadata only.
@@ -31,6 +38,13 @@ fr:
       PLUGIN_STATUS: Etat du plugin
       DEFAULT_CONFIG: Valeurs par défaut pour la configuration du plugin
       PLUGIN_DEPENDENCY_FAILED: le plug-in Auto SEO n'a pas pu être chargé. Les dépendances de Composer ne sont pas remplies.
+      TITLE:
+        APPEND_SITE_TITLE:
+          LABEL: Ajouter le titre du site à la méta "titre"
+          HELP: Concatène le titre du site aux métadonnées « titre », par exemple de « À propos de nous » à « À propos de nous | Mon site génial'.
+        SEPARATOR:
+          LABEL: Texte de séparation pour la méta "titre"
+          HELP: Texte qui sépare le titre de la page du titre du site dans les métadonnées « titre », par exemple « À propos de nous | Mon site génial » ou « À propos de nous – Mon site génial ».
       DESCRIPTION:
         ENABLED_LABEL: Remplissage automatique pour la méta "Description"
         ENABLED_HELP: Permet de mettre le plugin ON et OFF pour la métadonnée "Description" uniquement.

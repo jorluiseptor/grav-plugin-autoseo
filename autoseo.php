@@ -66,6 +66,8 @@ class AutoSeoPlugin extends Plugin
     	$config = $this->mergeConfig($page);
     	if ( !$config['enabled']) return;
 
+        $appendSiteTitle =  $config['title.append_site_title'];
+        $siteTitleSeparator = $this->cleanString($config['title.separator']);
         $updateDescription =  $config['description.enabled'];
         $updatekeywords =  $config['keywords.enabled'];
         $updateFacebook =  $config['facebook.enabled'];
@@ -80,13 +82,30 @@ class AutoSeoPlugin extends Plugin
         $content = mb_substr(strip_tags($page->content()),0, 1000 );
 
         $cleanContent = $this->cleanText ($content, $config); // here because we don't want to make this call several times
-        $cleanTitle = $this->cleanString ($page->title()); // here because we don't want to make this call several times
+        $cleanTitle =  $this->getPageTitle($appendSiteTitle,$siteTitleSeparator); // here because we don't want to make this call several times
 
         if ($updateDescription) $meta = $this->getMetaDescription ($meta, $metaSite, $config, $cleanContent);
         if ($updatekeywords) $meta = $this->getMetaKeywords ($meta, $metaSite, $config);
         if ($updateFacebook) $meta = $this->getMetaOpenGraph ($meta, $metaSite, $config, $cleanContent, $cleanTitle);
         if ($updateTwitter) $meta = $this->getMetaTwitter ($meta, $metaSite, $config, $cleanContent, $cleanTitle);
         $page->metadata ($meta);
+    }
+
+    // PROCESS for the title metadata by concatenating the page title and the site title if enabled
+    private function getPageTitle($appendSiteTitle, $siteTitleSeparator) : string {
+        $page = $this->grav['page'];
+        $pageTitle = $this->cleanString ($page->title());
+        $titleMetadata = '';
+
+        if ($appendSiteTitle) {
+            $siteTitle = $this->config->get('site.title');
+            $titleMetadata = $pageTitle . ' ' . $siteTitleSeparator . ' ' . $siteTitle;
+        }
+        else {
+            $titleMetadata = $pageTitle;
+        }
+        
+        return $titleMetadata;
     }
 
     // PROCESS for the description metadata
