@@ -1,3 +1,11 @@
+# v1.6.0
+## 06/20/2024
+
+1. []()
+    * For the "title" metadata, add option to append the site title to the page title.
+    * For "title" metadata, add option to specify the text that separates the page and site titles.
+    * Contributed by [Jorge Sepulveda (jorluiseptor@gmail.com)](https://github.com/jorluiseptor)
+
 # v1.5.0
 ## 01/04/2024
 
