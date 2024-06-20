@@ -29,6 +29,9 @@ Here is the default configuration and an explanation of available options:
 
 ```yaml
 enabled: true # lets you turn the plugin off and on.
+title:
+  append_site_title: false # lets you turn the plugin off and on for the "title" metadata.
+  separator: '|' # text that separates the page title from the site title in the "title" metadata.
 description:
   enabled: true # lets you turn the plugin off and on for the "description" metadata.
   length: 30 # maximal number of words that will be used to fill the "description" metadata.
@@ -40,10 +43,6 @@ facebook:
 twitter:
   enabled: true # Lets you turn the plugin ON and OFF for the "Twitter Cards" metadata.
 ```
-
-  * The first `enabled` field lets you turn the plugin on and off.
-  * The `enabled` field in each metadata section lets you turn on and off the plugin for this metadata only.
-  * `length` is the maximal count of words that will be used to fill the corresponding metadata.
 
 If you need to change any value, then the best process is to copy the `autoseo.yaml` file into your `users/config/plugins/` folder (create it if it doesn't exist), and then modify there. This will override the default settings.
 
