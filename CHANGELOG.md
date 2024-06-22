@@ -1,7 +1,16 @@
+# v1.6.1
+## 06/20/2024
+
+1. [](#bugfix)
+    * Remove incomplete feature until further update.
+2. [](#improved)
+    * Clean-up README.
+    * Contributed by [Jorge Sepulveda (jorluiseptor@gmail.com)](https://github.com/jorluiseptor)
+
 # v1.6.0
 ## 06/20/2024
 
-1. []()
+1. [](#improved)
     * For the "title" metadata, add option to append the site title to the page title.
     * For "title" metadata, add option to specify the text that separates the page and site titles.
     * Contributed by [Jorge Sepulveda (jorluiseptor@gmail.com)](https://github.com/jorluiseptor)
@@ -9,14 +18,14 @@
 # v1.5.0
 ## 01/04/2024
 
-1. []()
+1. [](new)
     * Addes SEO tab so you can set/overide auto generated values
 
 
 # v1.4.0
 ## 04/08/2022
 
-1. []()
+1. [](#new)
     * takeover release
 2. [](#bugfix)
     * do not crash on mbregex search failure in php_mbereg_replace_exec.
