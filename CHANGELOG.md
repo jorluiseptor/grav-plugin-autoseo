@@ -1,5 +1,5 @@
 # v1.7.0
-## 06/20/2024
+## 10/10/2024
 
 1. [](#new)
     * Ability to disable Auto SEO on specific pages.
