@@ -1,3 +1,10 @@
+# v1.7.0
+## 06/20/2024
+
+1. [](#new)
+    * Ability to disable Auto SEO on specific pages.
+    * Contributed by [Jorge Sepulveda (jorluiseptor@gmail.com)](https://github.com/jorluiseptor)
+
 # v1.6.1
 ## 06/20/2024
 
@@ -18,9 +25,8 @@
 # v1.5.0
 ## 01/04/2024
 
-1. [](new)
-    * Addes SEO tab so you can set/overide auto generated values
-
+1. [](#new)
+    * Adds SEO tab so you can set/overide auto generated values
 
 # v1.4.0
 ## 04/08/2022
